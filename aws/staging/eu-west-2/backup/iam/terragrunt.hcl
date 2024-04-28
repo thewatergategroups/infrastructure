@@ -49,7 +49,7 @@ inputs = {
                 "s3:ListMultipartUploadParts"
             ],
             "Resource": [
-                "${dependency.s3.bucket_arn}/*"
+                "${dependency.s3.outputs.bucket_arn}/*"
             ]
         },
         {
@@ -58,7 +58,7 @@ inputs = {
                 "s3:ListBucket"
             ],
             "Resource": [
-                "${dependency.s3.bucket_arn}"
+                "${dependency.s3.outputs.bucket_arn}"
             ]
         }
     ]

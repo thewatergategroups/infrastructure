@@ -20,5 +20,5 @@ locals {
 inputs = {
   enabled      = true
   name         = "cluster-backup-${local.account_id}"
-  user_enabled = true
+  user_enabled = false
 }

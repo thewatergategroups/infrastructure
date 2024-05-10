@@ -28,7 +28,8 @@ inputs = {
           "Action" : [
             "ssm:GetParameter",
             "ssm:PutParameter",
-            "ssm:DescribeParameter"
+            "ssm:DescribeParameter",
+            "ssm:DeleteParameter"
           ],
           "Resource" : [
             "arn:aws:ssm:*:${local.account_id}:parameter/*"

@@ -28,11 +28,12 @@ inputs = {
           "Action" : [
             "ssm:GetParameter",
             "ssm:PutParameter",
-            "ssm:DescribeParameter",
+            "ssm:GetParametersByPath",
             "ssm:DeleteParameter"
           ],
           "Resource" : [
-            "arn:aws:ssm:*:${local.account_id}:parameter/apps/*"
+            "arn:aws:ssm:${local.region}:${local.account_id}:parameter/apps",
+            "arn:aws:ssm:${local.region}:${local.account_id}:parameter/apps/*"
           ]
         }
       ]

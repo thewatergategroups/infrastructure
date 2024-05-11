@@ -18,7 +18,7 @@ locals {
 }
 
 inputs = {
-  name = "external-secrets-${local.account_id}"
+  name = "resource-manager-${local.account_id}"
   inline_policies = [
     jsonencode({
       "Version" : "2012-10-17",
@@ -29,9 +29,10 @@ inputs = {
             "ssm:GetParameter",
             "ssm:PutParameter",
             "ssm:DescribeParameter",
+            "ssm:DeleteParameter"
           ],
           "Resource" : [
-            "arn:aws:ssm:*:${local.account_id}:parameter/*"
+            "arn:aws:ssm:*:${local.account_id}:parameter/apps/*"
           ]
         }
       ]

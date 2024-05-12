@@ -18,7 +18,7 @@ locals {
 }
 
 inputs = {
-  name = "tf-lest-encrypt-iam-role-${local.region}"
+  name = "tf-iam-role-cert-manager-${local.region}"
   inline_policies = [
     jsonencode({
       "Version" : "2012-10-17",
@@ -28,7 +28,8 @@ inputs = {
           "Effect" : "Allow",
           "Action" : [
             "route53:ListHostedZones",
-            "route53:GetChange"
+            "route53:GetChange",
+			"route53:ListHostedZonesByName"
           ],
           "Resource" : "*"
         },
@@ -47,24 +48,3 @@ inputs = {
     )
   ]
 }
-
-// {
-//     "Version": "2012-10-17",
-//     "Statement": [
-//         {
-//             "Effect": "Allow",
-//             "Action": "route53:GetChange",
-//             "Resource": "arn:aws:route53:::change/*"
-//         },
-//         {
-//             "Effect": "Allow",
-//             "Action": "route53:ChangeResourceRecordSets",
-//             "Resource": "arn:aws:route53:::hostedzone/<your hosted zone id>"
-//         },
-//         {
-//             "Effect": "Allow",
-//             "Action": "route53:ListHostedZonesByName",
-//             "Resource": "*"
-//         }
-//     ]
-// }

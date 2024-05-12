@@ -18,7 +18,7 @@ locals {
 }
 
 inputs = {
-  name             = "cluster"
   parent_zone_name = "thewatergates.com"
-  zone_name        = "$${name}.$${stage}.$${parent_zone_name}"
+  parent_zone_record_enabled = false
+  zone_name        = "thewatergategroups-v1.com"
 }

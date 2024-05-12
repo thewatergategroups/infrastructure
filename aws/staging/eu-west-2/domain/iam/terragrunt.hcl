@@ -20,23 +20,26 @@ locals {
 inputs = {
   name = "tf-lest-encrypt-iam-role-${local.region}"
   inline_policies = [
-    jsonencode({
-      "Version" : "2012-10-17",
-      "Sid": "LetsEncryptAllow",
-      "Statement" : [
-        {
-          "Effect" : "Allow",
-          "Action" : [
-            "ssm:GetParameter",
-            "ssm:PutParameter",
-            "ssm:DescribeParameter",
-          ],
-          "Resource" : [
-            "arn:aws:ssm:*:${local.account_id}:parameter/*"
-          ]
-        }
-      ]
-      }
-    )
+		{
+			"Sid": "AllowCertainChanges",
+			"Effect": "Allow",
+			"Action": [
+				"route53:ListHostedZones",
+				"route53:GetChange"
+			],
+			"Resource": [
+				"*"
+			]
+		},
+		{
+			"Sid": "Change91testHostzone",
+			"Effect": "Allow",
+			"Action": [
+				"route53:ChangeResourceRecordSets"
+			],
+			"Resource": [
+				"arn:aws:route53:::hostedzone/Z061744026X1CUF71V2PH"
+			]
+		}
   ]
 }

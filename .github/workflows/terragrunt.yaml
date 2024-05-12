@@ -1,0 +1,8 @@
+on:
+  push:
+    branches:
+      - bb/workflow-add
+
+jobs:
+  scan-build-push-workflow:
+    uses: 1ndistinct/ops/.github/workflows/terragrunt-apply-workflow.yaml@bb/g-actions-terragrunt

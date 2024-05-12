@@ -37,13 +37,13 @@ inputs = {
           ]
         },
         {
-            "Effect": "Allow",
-            "Action": [
-                "route53:ListHostedZones",
-                "route53:ListResourceRecordSets",
-                "route53:ChangeResourceRecordSets"
-            ],
-            "Resource": "*"
+          "Effect" : "Allow",
+          "Action" : [
+            "route53:ListHostedZones",
+            "route53:ListResourceRecordSets",
+            "route53:ChangeResourceRecordSets"
+          ],
+          "Resource" : "*"
         }
       ]
       }

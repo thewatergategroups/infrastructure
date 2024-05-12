@@ -18,8 +18,6 @@ locals {
 }
 
 inputs = {
-  namespace        = "eg"
-  stage            = "test"
   name             = "cluster"
   parent_zone_name = "thewatergates.com"
   zone_name        = "$${name}.$${stage}.$${parent_zone_name}"

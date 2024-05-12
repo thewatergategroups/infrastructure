@@ -20,9 +20,9 @@ locals {
 inputs = {
   name = "tf-iam-role-cert-manager-${local.region}"
   inline_policies = [
-    jsonencode({
+    jsonencode(
+		{
       "Version" : "2012-10-17",
-      "Sid" : "AllowCertainChanges",
       "Statement" : [
         {
           "Effect" : "Allow",
@@ -35,7 +35,6 @@ inputs = {
         },
         {
           "Effect" : "Allow",
-          "Sid" : "ChangeResourceName",
           "Action" : [
             "route53:ChangeResourceRecordSets"
           ],

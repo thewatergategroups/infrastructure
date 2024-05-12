@@ -7,7 +7,7 @@ include "envcommon" {
 }
 
 terraform {
-  source = "${include.envcommon.locals.base_source_url}
+  source = "${include.envcommon.locals.base_source_url}//?version=${include.envcommon.locals.base_version}"
 }
 
 locals {
@@ -20,26 +20,30 @@ locals {
 inputs = {
   name = "tf-lest-encrypt-iam-role-${local.region}"
   inline_policies = [
-		{
-			"Sid": "AllowCertainChanges",
-			"Effect": "Allow",
-			"Action": [
-				"route53:ListHostedZones",
-				"route53:GetChange"
-			],
-			"Resource": [
-				"*"
-			]
-		},
-		{
-			"Sid": "Change91testHostzone",
-			"Effect": "Allow",
-			"Action": [
-				"route53:ChangeResourceRecordSets"
-			],
-			"Resource": [
-				"arn:aws:route53:::hostedzone/Z061744026X1CUF71V2PH"
-			]
-		}
+    jsonencode({
+      "Version" : "2012-10-17",
+      "Sid" : "AllowCertainChanges",
+      "Statement" : [
+        {
+          "Effect" : "Allow",
+          "Action" : [
+            "route53:ListHostedZones",
+            "route53:GetChange"
+          ],
+          "Resource" : "*"
+        },
+        {
+          "Effect" : "Allow",
+          "Sid" : "ChangeResourceName",
+          "Action" : [
+            "route53:ChangeResourceRecordSets"
+          ],
+          "Resource" : [
+            "arn:aws:route53:::hostedzone/Z061744026X1CUF71V2PH"
+          ]
+        }
+      ]
+      }
+    )
   ]
 }

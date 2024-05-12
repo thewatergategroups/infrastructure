@@ -18,7 +18,7 @@ locals {
 }
 
 inputs = {
-  parent_zone_name = "thewatergates.com"
+  parent_zone_name = "thewatergates-v1.com"
   parent_zone_record_enabled = false
   zone_name        = "thewatergategroups-v1.com"
 }

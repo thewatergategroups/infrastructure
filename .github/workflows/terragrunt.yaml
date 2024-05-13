@@ -5,7 +5,7 @@ on:
 
 jobs:
   scan-build-push-workflow:
-    uses: 1ndistinct/ops/.github/workflows/terragrunt-apply-workflow.yaml@bb/g-actions-terragrunt
+    uses: 1ndistinct/ops/.github/workflows/terragrunt-apply-workflow.yaml@main
     secrets:
       AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}

@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - bb/workflow-add
+      - main
 
 jobs:
   scan-build-push-workflow:

@@ -35,6 +35,15 @@ inputs = {
             "arn:aws:ssm:${local.region}:${local.account_id}:parameter/apps",
             "arn:aws:ssm:${local.region}:${local.account_id}:parameter/apps/*"
           ]
+        },
+        {
+          "Effect" : "Allow",
+          "Action" : [
+            "route53:ListHostedZones",
+            "route53:ListResourceRecordSets",
+            "route53:ChangeResourceRecordSets"
+          ],
+          "Resource" : "*"
         }
       ]
       }

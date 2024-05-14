@@ -21,7 +21,7 @@ locals {
 }
 
 inputs = {
-  name = "tf-iam-role-domain-management-${local.region}"
+  name = "tf-iam-user-domain-management"
   inline_policies = [
     jsonencode(
       {

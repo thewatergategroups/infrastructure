@@ -17,9 +17,8 @@
 //   region       = local.region_vars.locals.region
 // }
 
-// TODO: Ideally this need to be imported into state
 // inputs = {
-//   parent_zone_name = "thewatergates-v1.com" # Remove "-v1"
+//   parent_zone_name = "thewatergategroups.com" # Remove "-v1"
 //   parent_zone_record_enabled = false
-//   zone_name        = "thewatergategroups-v1.com" # Remove "-v1"
+//   zone_name        = "thewatergategroups.com" # Remove "-v1"
 // }

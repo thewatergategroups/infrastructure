@@ -25,21 +25,21 @@ provider "aws" {
 EOF
 }
 
-remote_state {
-  backend = "s3"
-  config = {
-    encrypt        = true
-    bucket         = "tf-state-${local.account_id}"
-    key            = "${local.state_key_prefix}/${path_relative_to_include()}/terraform.tfstate"
-    role_arn       = "${local.state_role_arn}"
-    region         = "eu-west-2"
-    dynamodb_table = "tf-state-${local.account_id}"
-  }
-  generate = {
-    path      = "backend.tf"
-    if_exists = "overwrite_terragrunt"
-  }
-}
+// remote_state {
+//   backend = "s3"
+//   config = {
+//     encrypt        = true
+//     bucket         = "tf-state-${local.account_id}"
+//     key            = "${local.state_key_prefix}/${path_relative_to_include()}/terraform.tfstate"
+//     role_arn       = "${local.state_role_arn}"
+//     region         = "eu-west-2"
+//     dynamodb_table = "tf-state-${local.account_id}"
+//   }
+//   generate = {
+//     path      = "backend.tf"
+//     if_exists = "overwrite_terragrunt"
+//   }
+// }
 
 inputs = merge(
   {

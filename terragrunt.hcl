@@ -27,6 +27,7 @@ EOF
 
 remote_state {
   backend = "s3"
+  disable_init = true
   config = {
     encrypt        = true
     bucket         = "tf-state-${local.account_id}"
@@ -35,10 +36,10 @@ remote_state {
     region         = "eu-west-2"
     dynamodb_table = "tf-state-${local.account_id}"
   }
-  // generate = {
-  //   path      = "backend.tf"
-  //   if_exists = "overwrite_terragrunt"
-  // }
+  generate = {
+    path      = "backend.tf"
+    if_exists = "overwrite_terragrunt"
+  }
 }
 
 inputs = merge(

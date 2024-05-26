@@ -7,4 +7,3 @@ backend.tf
 .terrafrom/
 **/secret_vals.yaml
 **/template.yaml
-**/test

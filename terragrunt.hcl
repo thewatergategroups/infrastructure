@@ -27,6 +27,7 @@ EOF
 
 remote_state {
   backend = "s3"
+  disable_init = true
   config = {
     encrypt        = true
     bucket         = "tf-state-${local.account_id}"
@@ -34,8 +35,6 @@ remote_state {
     role_arn       = "${local.state_role_arn}"
     region         = "eu-west-2"
     dynamodb_table = "tf-state-${local.account_id}"
-
-    disable_bucket_update = true
   }
   generate = {
     path      = "backend.tf"

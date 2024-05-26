@@ -3,6 +3,11 @@ on:
     branches:
       - main
 
+env:
+  tf_version: '1.4.5'
+  tg_version: '0.54.22'
+  working_dir: './aws/staging/eu-west-2'
+
 jobs:
   apply:
     uses: 1ndistinct/ops/.github/workflows/terragrunt-apply-workflow.yaml@master

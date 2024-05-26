@@ -27,7 +27,6 @@ EOF
 
 remote_state {
   backend = "s3"
-  disable_init = true
   config = {
     encrypt        = true
     bucket         = "tf-state-${local.account_id}"

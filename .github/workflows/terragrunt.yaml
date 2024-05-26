@@ -9,7 +9,7 @@ env:
   working_dir: './aws/staging/eu-west-2'
 
 jobs:
-  apply:
+  Terragrunt:
     uses: 1ndistinct/ops/.github/workflows/terragrunt-apply-workflow.yaml@master
     secrets:
       AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}

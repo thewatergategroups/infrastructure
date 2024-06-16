@@ -37,11 +37,11 @@ inputs = {
           ]
         },
         {
-          "Action": [
+          "Action" : [
             "ssm:DescribeParameters"
           ],
-          "Effect": "Allow",
-          "Resource": [
+          "Effect" : "Allow",
+          "Resource" : [
             "arn:aws:ssm:${local.region}:${local.account_id}:*"
           ]
         },

@@ -28,6 +28,7 @@ inputs = {
           "Action" : [
             "ssm:GetParameter",
             "ssm:PutParameter",
+            "ssm:GetParametersByPath",
             "ssm:DeleteParameter"
           ],
           "Resource" : [
